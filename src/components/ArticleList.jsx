@@ -52,6 +52,12 @@ function ArticleList({ articles, onDelete, onEdit }) {
                 {content.title}
               </div>
               <div>{formatDate(content.date)}</div>
+              {content.isDuplicate && (
+                <div className="text-red-500 text-sm">
+                  This article contains content similar to that of one or some
+                  other articles.
+                </div>
+              )}
             </div>
             {user.role === "writer" ? (
               <div className="flex gap-2">
@@ -68,7 +74,7 @@ function ArticleList({ articles, onDelete, onEdit }) {
           </div>
         ))
       ) : (
-        <div className="text-center">No texts to show</div>
+        <div className="text-center">No articles to show</div>
       )}
       {openText && selected && (
         <ShowPopup text={selected} closePopup={() => setOpenText(false)} />
