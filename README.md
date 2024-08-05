@@ -1,4 +1,4 @@
-# Frontend Application
+# Article Frontend Application
 
 ## Project Overview
 
